@@ -1,5 +1,3 @@
-![Voxloud Logo](https://www.voxloud.com/wp-content/uploads/2020/07/voxloud_logo_@1x.png)
-
 # Provisioning server #
 
 ## Context ##
@@ -27,7 +25,7 @@ GET /api/v1/provisioning/aa-bb-cc-11-22-33
 The server stores a table that contains all the phones in the inventory. If a phone is found in the inventory then its
 configuration file should be dynamically generated, according to the phone model configuration format. If a phone is not 
 found in the inventory, the server should deny the provisioning request, returning a proper HTTP error code.
-As an additional requirement, the system should be able to support new device type provisioning with minimal code/configuration change.
+The system also support new device type provisioning with minimal code/configuration change.
 
 ### Configuration file formats ###
 The two device types use the following configuration file formats:
@@ -107,21 +105,3 @@ Database is automatically recreated at startup with sample data. You can connect
 - JDBC URL: `jdbc:h2:mem:test`
 - User Name: `sa`
 - Password: `password`
- 
-## Project delivery
-The final output of the project should include the following artifacts:
-
-- Complete `ProvisioningController` to handle provisioning requests according to the given request format
-- Complete `ProvisioningServiceImpl` implementation in order to support provisioning requests. Create all the necessary 
-classes to realize the best possible implementation, considering OOP principles   
-- Make `ProvisioningServiceImpl` able to support override fragments for some devices, according to the requirements
-- Tests for the implemented classes
-
-All the code should be pushed in __**your public Git repository**__(Bitbucket, Github, etc), since you can't push branches on this repository. 
-These are the steps:
-
-1. You create a public fork of this project on your Bitbucket account clicking [here](https://bitbucket.org/voxloud/provisioning-hw/fork) or you clone it and push to your account if you use other Git platforms (Github, Gitlab, etc)
-2. You commit and push to your fork master branch
-3. You share the (public) repository link with the reviewer when development is completed
-
-Note: The system will be tested by the reviewer on the sample data by running `results.sh`
